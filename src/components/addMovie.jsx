@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
 import axios from 'axios';
+import { BASE_URL } from '../../config';
 
 function addMovie() {
     const [title, setTitle] = useState("");
@@ -13,7 +14,7 @@ function addMovie() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const response = await axios.post("http://localhost:4000/api/v1/movie/add", {
+            const response = await axios.post(BASE_URL+"/api/v1/movie/add", {
                 title,
                 director,
                 year,

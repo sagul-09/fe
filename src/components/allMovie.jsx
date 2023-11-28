@@ -18,7 +18,7 @@ function allMovie() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4000/api/v1/movie");
+        const response = await axios.get(BASE_URL+"/api/v1/movie");
         setMovies(response.data.movies);
         console.log(response.data.movies);
       } catch(err) {
@@ -34,7 +34,7 @@ function allMovie() {
   const [isSearching, setIsSearching] = useState(false);
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/movie/search?title=${search}`);
+      const response = await axios.get(BASE_URL+`/api/v1/movie/search?title=${search}`);
       setIsSearching(true);
       setSearchResults(response.data.movie);
       console.log(response.data.movie);

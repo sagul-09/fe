@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import { useParams , useNavigate} from 'react-router-dom'
-
+import { BASE_URL } from '../../config';
 function viewMovie() {
 
     const params = useParams();
@@ -9,7 +9,7 @@ function viewMovie() {
 
     const handleUpdate = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:4000/api/v1/movie/update/${id}`, {
+        const response = await fetch(BASE_URL+`/api/v1/movie/update/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function viewMovie() {
     const [imdb, setImdb] = useState("");
 
     const getMovie = async () => {
-        const response = await fetch(`http://localhost:4000/api/v1/movie/get/${id}`);
+        const response = await fetch(BASE_URL+`/api/v1/movie/get/${id}`);
         const data = await response.json();
         setTitle(data.movie.title);
         setDirector(data.movie.director);
