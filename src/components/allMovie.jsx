@@ -50,6 +50,9 @@ function allMovie() {
         <input onChange={(e)=>setSearch (e.target.value)} type="text" />
         <button onClick={handleSearch}>search</button>
       </div>
+      <Link to="/add">
+        <button>add</button>
+      </Link>
     {!isSearching ? (
       movies.map(movie => (
         <div key={movie._id}>
