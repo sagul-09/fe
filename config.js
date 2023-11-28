@@ -1,1 +1,1 @@
-export const BASE_URL=import.meta.env.VITE_NODE_ENV === "development" ? "http://localhost:4000" : "https://presidio-task-be.vercel.app/"
+export const BASE_URL=import.meta.env.VITE_NODE_ENV === "development" ? "http://localhost:4000" : "https://presidio-task-be.vercel.app"
